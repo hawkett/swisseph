@@ -101,4 +101,6 @@ void Initialize (Local <Object> exports) {
 	Nan::SetMethod (exports, "swe_rise_trans_true_hor", node_swe_rise_trans_true_hor);
 }
 
-NODE_MODULE (swisseph, Initialize);
+NODE_MODULE_INIT() {
+    Initialize(exports);
+}
